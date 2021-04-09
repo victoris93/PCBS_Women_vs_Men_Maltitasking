@@ -22,23 +22,19 @@ def draw_stimulus_field(offset_1, offset_2):
 	pygame.draw.rect(screen, YELLOW, (field_x_corner, field_y_corner, field_width, field_height), 1)
 	pygame.draw.line(screen, YELLOW, (offset_1, H // 2), (W - offset_1, H // 2), 1)
 	
-draw_stimulus_field(50, 50)
 
-print(len('SHAPE'))
+def screen_labels(label1, label2, stimulus_field_offset):
+	label_font=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
+	top_label = label_font.render(label1, 1, pygame.Color('YELLOW'))
+	screen.blit(top_label, ((W - 20 * len(label1)) // 2, 0))
+	bottom_label = label_font.render(label2, 1, pygame.Color('YELLOW'))
+	screen.blit(bottom_label, ((W - 20 * len(label2)) // 2, H - stimulus_field_offset))
 
-def top_screen_label(label):
-	myfont=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
-	line = myfont.render(label, 1, pygame.Color('YELLOW'))
-	screen.blit(line, ((W - 20 * len(label)) // 2, 0))
+#def bottom_screen_label(label, screen_offset):
+	#myfont=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
+	#line = myfont.render(label, 1, pygame.Color('YELLOW'))
+	#screen.blit(line, ((W - 20 * len(label)) // 2, H - screen_offset)) 
 
-def bottom_screen_label(label):
-	myfont=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
-	line = myfont.render(label, 1, pygame.Color('YELLOW'))
-	screen.blit(line, ((W - 20 * len(label)) // 2, H - 50)) 
-
-
-top_screen_label('SHAPE')
-bottom_screen_label('FILLING')
 
 # The SHAPE task: 
 	
@@ -134,8 +130,16 @@ def generate_filling_diamond_2_circles():
 	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 + 25), 20)
 	pygame.display.flip()
 	pygame.image.save(screen, "filling_diamond_2_circles.png")
+	
+stimulus_functions = [generate_shape_square_3_circles, generate_shape_square_2_circles, generate_shape_diamond_3_circles, generate_shape_diamond_2_circles, generate_filling_square_3_circles, generate_filling_square_2_circles, generate_filling_diamond_3_circles, generate_filling_diamond_2_circles]
 
-generate_shape_square_3_circles()	
+for fun in stimulus_functions:
+	draw_stimulus_field(50, 50)
+	screen_labels("SHAPE", "FILLING", 50)
+	fun()
+	screen.fill((0,0,0))
+	pygame.display.flip()
+	
 
 done = False
 while not done:
