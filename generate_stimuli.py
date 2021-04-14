@@ -1,4 +1,3 @@
-#! /usr/bin/env python
 # Author: Victoria Shevchenko
 
 import pygame 
@@ -15,13 +14,11 @@ pygame.font.init()
 screen = pygame.display.set_mode((W, H), pygame.DOUBLEBUF)
 screen.fill(BLACK)
 
-# Field coordinates
 def draw_stimulus_field(offset_1, offset_2):
 	field_x_corner, field_y_corner = offset_1, offset_2
 	field_width, field_height = W - 2 * offset_1, H - 2 * offset_2
 	pygame.draw.rect(screen, YELLOW, (field_x_corner, field_y_corner, field_width, field_height), 1)
 	pygame.draw.line(screen, YELLOW, (offset_1, H // 2), (W - offset_1, H // 2), 1)
-	
 
 def screen_labels(label1, label2, stimulus_field_offset):
 	label_font=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
@@ -29,121 +26,94 @@ def screen_labels(label1, label2, stimulus_field_offset):
 	screen.blit(top_label, ((W - 20 * len(label1)) // 2, 0))
 	bottom_label = label_font.render(label2, 1, pygame.Color('YELLOW'))
 	screen.blit(bottom_label, ((W - 20 * len(label2)) // 2, H - stimulus_field_offset))
-
-#def bottom_screen_label(label, screen_offset):
-	#myfont=pygame.font.SysFont(pygame.font.get_fonts()[0], 40)
-	#line = myfont.render(label, 1, pygame.Color('YELLOW'))
-	#screen.blit(line, ((W - 20 * len(label)) // 2, H - screen_offset)) 
-
-
-# The SHAPE task: 
 	
-def generate_shape_square_3_circles():
-	#The figure: square with 3 circles for the shape task
-	square_left, square_top = ((W - W // 5) // 2), (((H // 2) - H // 5) // 2) 
-	square_right, square_bottom = W // 5, H // 5
+def draw_square(task_type):
+	square_left, square_right = ((W - W // 5) // 2), W // 5
+	square_bottom = H // 5
+	if task_type == "shape":
+		square_top = ((H // 2) - H // 5) // 2
+	elif task_type == "filling":
+		square_top = H - (H // 4 + H // 10)
 	pygame.draw.rect(screen, YELLOW, (square_left, square_top, square_right, square_bottom), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4), 20)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 - 50), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 + 50), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "shape_square_3_circles.png")
 	
-def generate_shape_square_2_circles():
-	#The figure: square with 3 circles for the shape task
-	square_left, square_top = ((W - W // 5) // 2), (((H // 2) - H // 5) // 2) 
-	square_right, square_bottom = W // 5, H // 5
-	pygame.draw.rect(screen, YELLOW, (square_left, square_top, square_right, square_bottom), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 - 25), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 + 25), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "shape_square_2_circles.png")
+def draw_diamond(task_type):
+		x1 = W // 2
+		x2 = W // 2 - W // 5 * math.sin(math.pi/4)
+		x3 = W // 2
+		x4 = W // 2 + W // 5 * math.sin(math.pi / 4)
+		if task_type == "shape":
+			y1 = H // 4 - H // 5 * math.sin(math.pi/4)
+			y2 = H // 4
+			y3 = H // 4 + H // 5 * math.sin(math.pi/4)
+			y4 = H // 4
+		elif task_type == "filling":
+			y1 = H // 2 + (H // 4 - H // 5 * math.sin(math.pi/4))
+			y2 = H - H // 4
+			y3 = H - H // 4 + H // 5 * math.sin(math.pi/4)
+			y4 = H - H // 4
+		point_1 = x1, y1
+		point_2 = x2, y2
+		point_3 = x3, y3
+		point_4 = x4, y4
+		pygame.draw.polygon(screen, YELLOW, (point_1, point_2, point_3, point_4), 7)
 
-def generate_shape_diamond_3_circles():
-	#The figure: diamond with 3 circles for the shape task
-	diamond_point_1 = W // 2, H // 4 - H // 5 * math.sin(math.pi/4)
-	diamond_point_2 = W // 2 - W // 5 * math.sin(math.pi/4), H // 4
-	diamond_point_3 = W // 2, H // 4 + H // 5 * math.sin(math.pi/4)
-	diamond_point_4 = W // 2 + W // 5 * math.sin(math.pi / 4), H // 4
-	pygame.draw.polygon(screen, YELLOW, (diamond_point_1, diamond_point_2, diamond_point_3, diamond_point_4), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4), 20)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 - 50), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 + 50), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "shape_diamond_3_circles.png")
-	
-def generate_shape_diamond_2_circles():
-	#The figure: diamond with 3 circles for the shape task
-	diamond_point_1 = W // 2, H // 4 - H // 5 * math.sin(math.pi/4)
-	diamond_point_2 = W // 2 - W // 5 * math.sin(math.pi/4), H // 4
-	diamond_point_3 = W // 2, H // 4 + H // 5 * math.sin(math.pi/4)
-	diamond_point_4 = W // 2 + W // 5 * math.sin(math.pi / 4), H // 4
-	pygame.draw.polygon(screen, YELLOW, (diamond_point_1, diamond_point_2, diamond_point_3, diamond_point_4), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 - 25), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H // 4 + 25), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "shape_diamond_2_circles.png")
+def draw_3_circles(task_type):
+		center_x = W // 2
+		if task_type == "shape":
+			upper_center_y = H // 4 - 50
+			middle_center_y = H // 4
+			lower_center_y = H // 4 + 50
+		elif task_type == "filling":
+			upper_center_y = H - H // 4 - 50
+			middle_center_y = H - H // 4
+			lower_center_y = H - H // 4 + 50
+		center_y_coordinates = [upper_center_y, middle_center_y, lower_center_y]
+		for center_y in center_y_coordinates:
+			pygame.draw.circle(screen, YELLOW, (center_x, center_y), 20)
 
-# The FILLING task: 
-def generate_filling_square_3_circles():
-	#The figure: square with 3 circles for the shape task
-	square_left, square_top = ((W - W // 5) // 2, H - (H // 4 + H // 10))
-	square_right, square_bottom = W // 5, H // 5
-	pygame.draw.rect(screen, YELLOW, (square_left, square_top, square_right, square_bottom), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4), 20)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 - 50), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 + 50), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "filling_square_3_circles.png")
+def draw_2_circles(task_type):
+		center_x = W // 2
+		if task_type == "shape":
+			upper_center_y = H // 4 - 25
+			lower_center_y = H // 4 + 25
+		elif task_type == "filling":
+			upper_center_y = H - H // 4 - 25
+			lower_center_y =  H - H // 4 + 25
+		center_y_coordinates = [upper_center_y, lower_center_y]
+		for center_y in center_y_coordinates:
+			pygame.draw.circle(screen, YELLOW, (center_x, center_y), 20)
 	
-def generate_filling_square_2_circles():
-	#The figure: square with 3 circles for the shape task
-	square_left, square_top = ((W - W // 5) // 2, H - (H // 4 + H // 10))
-	square_right, square_bottom = W // 5, H // 5
-	pygame.draw.rect(screen, YELLOW, (square_left, square_top, square_right, square_bottom), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 - 25), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 + 25), 20)
+def shape_task(frame, circle_number):
+	filename = "shape_{}_{}_circles.png".format(frame, circle_number)
+	if frame == "square": 
+		draw_square("shape")
+	elif frame == "diamond": 
+		draw_diamond("shape")
+	if circle_number == 2:
+		draw_2_circles("shape")
+	elif  circle_number == 3:
+		draw_3_circles("shape")
 	pygame.display.flip()
-	pygame.image.save(screen, "filling_square_2_circles.png")
+	pygame.image.save(screen, filename)
+	
+def filling_task(frame, circle_number):
+	filename = "filling_{}_{}_circles.png".format(frame, circle_number)
+	if frame == "square": 
+		draw_square("filling")
+	elif frame == "diamond": 
+		draw_diamond("filling")
+	if circle_number == 2:
+		draw_2_circles("filling")
+	elif  circle_number == 3:
+		draw_3_circles("filling")
+	pygame.display.flip()
+	pygame.image.save(screen, filename)
 
-def generate_filling_diamond_3_circles():
-	#The figure: diamond with 3 circles for the shape task
-	diamond_point_1 = W // 2, H // 2 + (H // 4 - H // 5 * math.sin(math.pi/4))
-	diamond_point_2 = W // 2 - W // 5 * math.sin(math.pi/4), H - H // 4
-	diamond_point_3 = W // 2, H - H // 4 + H // 5 * math.sin(math.pi/4)
-	diamond_point_4 = W // 2 + W // 5 * math.sin(math.pi / 4), H - H // 4
-	pygame.draw.polygon(screen, YELLOW, (diamond_point_1, diamond_point_2, diamond_point_3, diamond_point_4), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4), 20)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 - 50), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 + 50), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "filling_diamond_3_circles.png")
-	
-def generate_filling_diamond_2_circles():
-	#The figure: diamond with 3 circles for the shape task
-	diamond_point_1 = W // 2, H // 2 + (H // 4 - H // 5 * math.sin(math.pi/4))
-	diamond_point_2 = W // 2 - W // 5 * math.sin(math.pi/4), H - H // 4
-	diamond_point_3 = W // 2, H - H // 4 + H // 5 * math.sin(math.pi/4)
-	diamond_point_4 = W // 2 + W // 5 * math.sin(math.pi / 4), H - H // 4
-	pygame.draw.polygon(screen, YELLOW, (diamond_point_1, diamond_point_2, diamond_point_3, diamond_point_4), 7)
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 - 25), 20)	
-	pygame.draw.circle(screen, YELLOW, (W // 2, H - H // 4 + 25), 20)
-	pygame.display.flip()
-	pygame.image.save(screen, "filling_diamond_2_circles.png")
-	
-stimulus_functions = [generate_shape_square_3_circles, generate_shape_square_2_circles, generate_shape_diamond_3_circles, generate_shape_diamond_2_circles, generate_filling_square_3_circles, generate_filling_square_2_circles, generate_filling_diamond_3_circles, generate_filling_diamond_2_circles]
-
-for fun in stimulus_functions:
-	draw_stimulus_field(50, 50)
-	screen_labels("SHAPE", "FILLING", 50)
-	fun()
-	screen.fill((0,0,0))
-	pygame.display.flip()
-	
-
-done = False
-while not done:
-        pygame.time.wait(100)
-        for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                        done = True
+for task in [shape_task, filling_task]:
+	for frame in ["square", "diamond"]: 	
+		for circle_number in [2, 3]:
+			draw_stimulus_field(50, 50)
+			screen_labels("SHAPE", "FILLING", 50)
+			task(frame, circle_number)
+			screen.fill((0,0,0))
+			pygame.display.flip()
