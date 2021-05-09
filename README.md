@@ -1,7 +1,15 @@
 # Are women better than men at multitasking?
 This is the question Stoet, O’Connor, Conner, and Laws aimed to address in their [study](https://bmcpsychology.biomedcentral.com/articles/10.1186/2050-7283-1-18). In this project, I will replicate its experimental design. It consists of two experiments.
 
-## Experiment 1. 
+**Table of Contents**
+
+- [Rationale](#Rationale)
+- [My implementation with Python](#my-implementation-with-python)
+- [Creating stimuli](#creating-stimuli)
+- [Experiment 1](#experiment-1)
+- [Data abalysis & visualization](#data-analysis-&-visualization)
+
+## Rationale
 The subjects are asked to report either the shape of the frame of the stimulus or the number of circles inside of it based on the location in which the stimulus appeared. This paradigm is useful for the assessment of the so-called *switching cost*: the increase in response times due to a change in instructions. Figure 1 depicts an example trial.
 
 ![Figure 1.](example_trial.png)
@@ -14,5 +22,12 @@ If the imperative stimulus appears at the top part of the screen labeled "Shape"
 
 *Figure 2. Every trial and corresponding correct responses.*
 
-## Experiment 2
-It is unclear how to replicate this part of the design since it involves paper-pencil tasks.
+## My implementation with Python
+
+### Creating stimuli
+
+### Experiment 1
+
+### Data abalysis & visualization
+
+
