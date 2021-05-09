@@ -5,9 +5,9 @@ This is the question Stoet, O’Connor, Conner, and Laws aimed to address in the
 
 - [Rationale](#Rationale)
 - [My implementation with Python](#my-implementation-with-python)
-- [Creating stimuli](#creating-stimuli)
-- [Experiment 1](#experiment-1)
-- [Data abalysis & visualization](#data-analysis-&-visualization)
+	- [Creating stimuli](#creating-stimuli)
+	- [Experiment 1](#experiment-1)
+	- [Data analysis & visualization](#data-analysis-&-visualization)
 
 ## Rationale
 The subjects are asked to report either the shape of the frame of the stimulus or the number of circles inside of it based on the location in which the stimulus appeared. This paradigm is useful for the assessment of the so-called *switching cost*: the increase in response times due to a change in instructions. Figure 1 depicts an example trial.
@@ -28,6 +28,6 @@ If the imperative stimulus appears at the top part of the screen labeled "Shape"
 
 ### Experiment 1
 
-### Data abalysis & visualization
+### Data analysis & visualization
 
 
