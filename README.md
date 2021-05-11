@@ -30,7 +30,7 @@ Half of the stimuli were cogruent, the other half - incongruent. The former cate
 
 ![Congruent Square 1.](readme_figures/congruent_trial_shape_square.png) ![Congruent Square 2.](readme_figures/congruent_trial_filling_square.png) ![Congruent Diamond 1.](readme_figures/congruent_trial_shape_diamond.png) ![Congruent Diamond 2.](readme_figures/congruent_trial_filling_diamond.png) 
 
-*Figure 3. Four trials of different tasks. All of them require the same response key.*
+*Figure 3. Four congruent trials. All of them require the same response key.*
 
 This project consists of three separate scripts generating stimuli, executing the experiment and the one analysing the data. To run the experiment on your computer, you should have Python installed. In addition, you will need other modules: [requirements.txt](https://github.com/victoris93/PCBS_Women_vs_Men_Multitasking/requirements.txt) .After having downloaded the project folder, in the terminal, change your directory, type `pip install -r requirements.txt` and hit Enter.
 
@@ -51,4 +51,4 @@ The main experiment consists of 192 trials and 3 blocks, so each block contains 
 
 ### Data analysis & visualization
 
-
+The script  `data_analysis.py` performs minor data manipulation and generates graphs similar to those in  Stoet, O’Connor, Conner, & Laws (2013). tesS

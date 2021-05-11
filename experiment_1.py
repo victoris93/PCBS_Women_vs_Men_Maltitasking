@@ -1,16 +1,17 @@
+import os
 from expyriment import design, control, stimuli, misc, io
 
 MALE_SEX_KEY = misc.constants.K_m
 FEMALE_SEX_KEY =  misc.constants.K_f
 
-SQUARE_RESPONSE_KEY = misc.constants.K_l # if the task is "shape"
+SQUARE_RESPONSE_KEY = misc.constants.K_l
 DIAMOND_RESPONSE_KEY = misc.constants.K_s
 
-TWO_CIRCLES_RESPONSE_KEY = misc.constants.K_s # if the task is "filling"
+TWO_CIRCLES_RESPONSE_KEY = misc.constants.K_s
 THREE_CIRCLES_RESPONSE_KEY = misc.constants.K_l
 
 TRAINING_TRIALS = 40
-EXPERIMENT_TRIALS_PER_BLOCK = 64 # In total 192 trials
+EXPERIMENT_TRIALS_PER_BLOCK = 64
 INTER_TRIAL_INTERVAL = 800
 MAX_RESPONSE_DELAY = 4000
 INSTRUCTION_REMINDER_AFTER_INCORRECT_RESPONSE = 5000
@@ -121,6 +122,10 @@ def get_subject_sex():
 		sex = 'Female'
 	return(sex)
 
+STIM_DIR = 'Stimuli/'
+
+#I decided not to implement a loop for these three blocks, since I would need to use a dictionary to create variable names from strings. The popular opinion is that it is not advisable
+
 pure_shape_block = design.Block()
 for shape in ['diamond', 'square']:
 	for number in [2, 3]:
@@ -129,7 +134,7 @@ for shape in ['diamond', 'square']:
 		trial.set_factor('task', 'shape')
 		trial.set_factor('shape', shape)
 		trial.set_factor('number_of_circles', number)
-		pngname = 'shape_{}_{}_circles.png'.format(shape, number)
+		pngname = os.path.join(STIM_DIR, 'shape_{}_{}_circles.png'.format(shape, number))
 		trial.add_stimulus(stimuli.Picture(pngname))
 		pure_shape_block.add_trial(trial)
 pure_shape_block.shuffle_trials()
@@ -142,7 +147,7 @@ for shape in ['diamond', 'square']:
 		trial.set_factor('task', 'filling')
 		trial.set_factor('shape', shape)
 		trial.set_factor('number_of_circles', number)
-		pngname = 'filling_{}_{}_circles.png'.format(shape, number)
+		pngname = os.path.join(STIM_DIR, 'filling_{}_{}_circles.png'.format(shape, number))
 		trial.add_stimulus(stimuli.Picture(pngname))
 		pure_filling_block.add_trial(trial)
 pure_filling_block.shuffle_trials()
@@ -156,7 +161,7 @@ for task in ['filling', 'shape']:
             trial.set_factor('task', task)
             trial.set_factor('shape', shape)
             trial.set_factor('number_of_circles', number)
-            pngname = '{}_{}_{}_circles.png'.format(task, shape, number)
+            pngname = os.path.join(STIM_DIR, '{}_{}_{}_circles.png'.format(task, shape, number))
             trial.add_stimulus(stimuli.Picture(pngname))
             mixed_block.add_trial(trial)
 mixed_block.shuffle_trials()
@@ -176,9 +181,12 @@ control.start()
 
 #training(TRAINING_TRIALS)
 
-experiment(BLOCKS, 3)
+experiment(BLOCKS, EXPERIMENT_TRIALS_PER_BLOCK)
+
+#experiment(BLOCKS, 3)
 
 control.end()
 
-misc.data_preprocessing.write_concatenated_data('/Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data', file_name = 'experiment_1', output_file = 'experiment_1_data.csv' , delimiter=',', to_R_data_frame=False, names_comprise_glob_pattern=False)
-
+current_dir = os.getcwd() + '/'
+data_dir = "data"
+misc.data_preprocessing.write_concatenated_data(os.path.join(current_dir, data_dir), file_name = 'experiment_1', output_file = 'experiment_1_data.csv' , delimiter=',', to_R_data_frame=False, names_comprise_glob_pattern=False)

@@ -1,0 +1,59 @@
+#Expyriment 0.10.0 (Python 3.8.5), .xpe-file, coding: UTF-8
+#date: Sun May 09 2021 18:14:22
+#sha1: 07e555
+#modules: 
+#display: size=(3440, 1440), window_mode=False, open_gl=False
+#os: uname_result(system='Darwin', node='Victorias-MacBook-Pro.local', release='20.3.0', version='Darwin Kernel Version 20.3.0: Thu Jan 21 00:07:06 PST 2021; root:xnu-7195.81.3~1/RELEASE_X86_64', machine='x86_64', processor='i386')
+Time,Type,Event,Value,Detail,Detail2
+13055,design,log,
+#design: #exp: Task Switching
+#design: #dvn: Sex,Trial Number,Block,Task Type,Frame Shape,Number of Circles,Congruent Trial,Correct Key,RT,Correct Response
+#design: block_cnt,block_id,trial_cnt,trial_id
+13055,design,logged,
+13055,Experiment,started
+13097,Stimulus,presented,18
+15340,Keyboard,received, ,wait_char
+15368,Stimulus,presented,16
+16179,Picture,loaded,filling_diamond_2_circles.png
+16182,Stimulus,presented,8
+17313,Keyboard,received,115,wait
+17340,Stimulus,presented,16
+18152,Picture,loaded,shape_square_3_circles.png
+18155,Stimulus,presented,15
+19316,Keyboard,received,108,wait
+19352,Stimulus,presented,20
+21061,Keyboard,received, ,wait_char
+21095,Stimulus,presented,17
+22639,Keyboard,received,102,wait
+22666,Stimulus,presented,16
+23475,Picture,loaded,shape_diamond_2_circles.png
+23478,Stimulus,presented,0
+24119,Keyboard,received,115,wait
+24147,Stimulus,presented,16
+24958,Picture,loaded,shape_diamond_3_circles.png
+24961,Stimulus,presented,1
+26201,Keyboard,received,115,wait
+26227,Stimulus,presented,16
+27035,Picture,loaded,filling_diamond_2_circles.png
+27038,Stimulus,presented,4
+28994,Keyboard,received,115,wait
+29023,Stimulus,presented,16
+29832,Picture,loaded,filling_square_3_circles.png
+29835,Stimulus,presented,7
+33620,Keyboard,received,108,wait
+33649,Stimulus,presented,16
+34458,Picture,loaded,filling_diamond_2_circles.png
+34461,Stimulus,presented,8
+35546,Keyboard,received,115,wait
+35574,Stimulus,presented,16
+36384,Picture,loaded,filling_square_3_circles.png
+36388,Stimulus,presented,11
+37520,Keyboard,received,108,wait
+37520,Experiment,ended
+37521,Data,saved
+37526,Stimulus,presented,23
+40756,stdout,received,'** Expyriment Data Preprocessor **'
+40757,stdout,received,'found 1 subject_data sets'
+40757,stdout,received,"found 11 variables: ['subject_id', 'Sex', 'Trial Number', 'Block', 'Task Type', 'Frame Shape', 'Number of Circles', 'Congruent Trial', 'Correct Key', 'RT', 'Correct Response']"
+40758,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_01_202105091814.xpd'
+40758,stdout,received,'write file: experiment_1_data.csv (66 cells in 6 rows)'

@@ -1,0 +1,17 @@
+#Expyriment 0.10.0 (Python 3.8.5), .xpd-file, coding: UTF-8
+#date: Sun May 09 2021 18:14:22
+#--EXPERIMENT INFO
+#e mainfile: experiment_1.py
+#e sha1: 07e555
+#e modules: 
+#e Experiment: Task Switching
+#e no between subject factors
+#--SUBJECT INFO
+#s id: 1
+subject_id,Sex,Trial Number,Block,Task Type,Frame Shape,Number of Circles,Congruent Trial,Correct Key,RT,Correct Response
+1,Female,0,pure_shape,shape,diamond,2,C,S,640,True
+1,Female,1,pure_shape,shape,diamond,3,I,S,1238,True
+1,Female,0,pure_filling,filling,diamond,2,C,S,1955,True
+1,Female,1,pure_filling,filling,square,3,C,L,3784,True
+1,Female,0,mixed,filling,diamond,2,C,S,1083,True
+1,Female,1,mixed,filling,square,3,C,L,1131,True
