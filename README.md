@@ -50,7 +50,7 @@ The experimental procedure follows the one outlined in Stoet, O’Connor, Conner
 First, the subject undergoes a training session whereby the data are not yet collected. The program starts with the presentation of instructions and asks the participant to proceed by pressing the space bar. The training consists in 40 trials each involving the presentation of a stimulus randomly picked from the eight stimuli generated earlier. Each time the participant presses the wrong key, an error message appears along with a reminder of the instructions. The message remains on the screen for 5 seconds followed by a 800ms pause after which the training is resumed.
 At the end of the training, the participant is presented with a message of completion and the reminder of instructions. Next, the participant is asked to report their sex after which the experimental trials begin.
 
-The main experiment consists of 192 trials and 3 blocks, so each block contains 64 trials. The first two blocks are the so-called "pure" blocks: the participant first performs only the "shape" task and then only the "filling" task. The last block is a "mixed" block. Within this block, the tasks are classified as tieither "mixed repeat" or "mixed switch". The attribution of factors "pure" , "mixed repeat" and "mixed switch" to trials is carried out at the stage of data manipulation and is therefore not present in the code of the experiment.
+The main experiment consists of 192 trials and 3 blocks, so each block contains 64 trials. The first two blocks are the so-called "pure" blocks: the participant first performs only the "shape" task and then only the "filling" task. The last block is a "mixed" block. Within this block, the tasks are classified as either "mixed repeat" or "mixed switch". The attribution of factors "pure" , "mixed repeat" and "mixed switch" to trials is carried out at the stage of data manipulation and is therefore not present in the code of the experiment.
 
 ### Data analysis & visualization
 
@@ -58,7 +58,7 @@ The script  `data_analysis.py` performs minor data manipulation and generates gr
 
 ![Plot 1.](Graphs/RT_condition_congruency_sex.png) ![Plot 2.](Graphs/Error_rate_condition_congruency_sex.png)
 
-*Figure 5. The graphs generated with the present script. The error barplot looks blank due to insufficient power (few trials).*
+*Figure 5. The graphs generated with the present script. The error barplot looks blank due to insufficient power (few trials). NB! The results displayed here are by no means authentic.*
 
 ### What I would have done differently given more time
 
