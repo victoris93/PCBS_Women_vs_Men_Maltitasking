@@ -18,7 +18,7 @@ The subjects are asked to report either the shape of the frame of the stimulus o
 
 ![Figure 1.](readme_figures/example_trial.png)
 
-*Figure 1. An example of the "shape" task, where the subject has to decide whether the imperative stimulus has the shape of a square of that of a diamond. The right response is "diamond"*
+*Figure 1. An example of the "shape" task, where the subject has to decide whether the imperative stimulus has the shape of a square of that of a diamond. The right response is "diamond".*
 
 
 ## My implementation with Python
@@ -58,5 +58,11 @@ The script  `data_analysis.py` performs minor data manipulation and generates gr
 
 ![Plot 1.](Graphs/RT_condition_congruency_sex.png) ![Plot 2.](Graphs/Error_rate_condition_congruency_sex.png)
 
-## What I would have done differently given more time
+*Figure 5. The graphs generated with the present script. The error barplot looks blank due to insufficient power (few trials).*
+
+### What I would have done differently given more time
+
+1. Run actual subjects;
+2. ANOVA;
+3. Make the code cleaner
 
