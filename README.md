@@ -43,7 +43,7 @@ The script `generate_stimuli.py` generates and saves eight images with filenames
 
 ![Figure 4.](readme_figures/stimulus_example.png)
 
-*Figure 4. The filling task: one of the eight stimuli named "filling_diamond_3_circles.png". The subject is instructed to report the number of circles within the frame and ignore its shape.*
+*Figure 4. The shape task: one of the eight stimuli named "shape_diamond_3_circles.png". The subject is instructed to report the shape of the frame and ignore the circles within.*
 
 ### Experiment 1
 The experimental procedure follows the one outlined in Stoet, O’Connor, Conner, & Laws (2013).  `experiment_1.py` launches the expermient. 
