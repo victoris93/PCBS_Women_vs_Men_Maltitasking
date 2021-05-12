@@ -1,4 +1,4 @@
-# Are women better than men at multitasking?
+Are women better than men at multitasking?
 =======================================
 
 This is the question Stoet, O’Connor, Conner, and Laws aimed to address in their [study](https://bmcpsychology.biomedcentral.com/articles/10.1186/2050-7283-1-18). In this project, I will replicate its experimental design. It consists of two experiments.
