@@ -62,7 +62,7 @@ The script  `data_analysis.py` performs minor data manipulation and generates gr
 
 ### What I would have done differently given more time
 
-1. Run actual subjects;
-2. ANOVA;
-3. Make the code cleaner
+1. **Run actual subjects.** The replication of the experimental design is interesting, but the replication of the results would be even more so.
+2. **ANOVA.** I have never performed this type of analysis, so it would have been a great opportunity to familiarize myself with it.
+3. **Make the code cleaner.** Never enough of this one.
 
