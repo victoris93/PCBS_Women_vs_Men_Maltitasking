@@ -1,7 +1,7 @@
 Are women better than men at multitasking?
 =======================================
 
-This is the question Stoet, O’Connor, Conner, and Laws aimed to address in their [study](https://bmcpsychology.biomedcentral.com/articles/10.1186/2050-7283-1-18). In this project, I will replicate its experimental design. It consists of two experiments.
+This is the question Stoet, O’Connor, Conner, and Laws aimed to address in their [study](https://bmcpsychology.biomedcentral.com/articles/10.1186/2050-7283-1-18). In this project, I will replicate its experimental design. It consists of two experiments. Only the first experiment is relevant for this project.
  
 - Project page: <https://victoris93.github.io/PCBS_Women_vs_Men_Multitasking/>
 - Github repository: <https://github.com/victoris93/PCBS_Women_vs_Men_Multitasking>
