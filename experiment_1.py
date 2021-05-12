@@ -183,10 +183,9 @@ kb = io.Keyboard()
 
 control.start()
 
-#training(TRAINING_TRIALS)
+training(TRAINING_TRIALS)
+experiment(BLOCKS, EXPERIMENT_TRIALS_PER_BLOCK)
 
-#experiment(BLOCKS, EXPERIMENT_TRIALS_PER_BLOCK)
-experiment(BLOCKS, 3)
 control.end()
 
 current_dir = os.getcwd() + '/'
