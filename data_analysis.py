@@ -1,10 +1,12 @@
+# Author: Victoria Shevchenko
+
+"""The script first reads the .csv file previously generated with experiment_1.py.  Then, it attributes a 'Condition' factor to trials. They are either pure, mixed repeat or mixed switch. The mixed switch factor is of special interest: they bear information about the switching cost. The data are then grouped by trial condition, congruency and subject's sex. The error rate is calculated after the grouping (line 29). The plots are generated from the grouped data."""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import os
-
-"""The script first reads the .csv file previously generated with experiment_1.py.  Then, it attributes a 'Condition' factor to trials. They are either pure, mixed repeat or mixed switch. The mixed switch factor is of special interest: they bear information about the switching cost. The data are then grouped by trial condition, congruency and subject's sex. The error rate is calculated after the grouping (line 29). The plots are generated from the grouped data."""
 
 GRAPH_DIR  = 'Graphs/'
 

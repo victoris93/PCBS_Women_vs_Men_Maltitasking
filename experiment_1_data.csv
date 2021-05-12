@@ -390,6 +390,15 @@ subject_id,Sex,Trial Number,Block,Task Type,Frame Shape,Number of Circles,Congru
 3,Female,61,mixed,filling,diamond,2,C,S,737,True
 3,Female,62,mixed,shape,square,2,I,L,1285,True
 3,Female,63,mixed,shape,square,2,I,L,611,True
+5,Male,0,pure_shape,shape,diamond,2,C,S,2131,False
+5,Male,1,pure_shape,shape,diamond,3,I,S,2042,False
+5,Male,2,pure_shape,shape,square,2,I,L,1509,True
+5,Male,0,pure_filling,filling,diamond,2,C,S,1411,True
+5,Male,1,pure_filling,filling,square,2,I,S,1527,False
+5,Male,2,pure_filling,filling,diamond,2,C,S,955,True
+5,Male,0,mixed,filling,diamond,2,C,S,884,True
+5,Male,1,mixed,shape,square,2,I,L,1449,True
+5,Male,2,mixed,filling,diamond,3,I,L,1435,False
 2,Male,0,pure_shape,shape,diamond,2,C,S,1000,True
 2,Male,1,pure_shape,shape,square,3,C,L,1104,True
 2,Male,2,pure_shape,shape,diamond,2,C,S,524,True

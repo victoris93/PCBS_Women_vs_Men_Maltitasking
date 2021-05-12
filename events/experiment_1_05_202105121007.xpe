@@ -1,0 +1,73 @@
+#Expyriment 0.10.0 (Python 3.8.5), .xpe-file, coding: UTF-8
+#date: Wed May 12 2021 10:07:53
+#sha1: 3ff15c
+#modules: 
+#display: size=(1920, 1080), window_mode=False, open_gl=False
+#os: uname_result(system='Darwin', node='Victorias-MacBook-Pro.local', release='20.3.0', version='Darwin Kernel Version 20.3.0: Thu Jan 21 00:07:06 PST 2021; root:xnu-7195.81.3~1/RELEASE_X86_64', machine='x86_64', processor='i386')
+Time,Type,Event,Value,Detail,Detail2
+12801,design,log,
+#design: #exp: Task Switching
+#design: #dvn: Sex,Trial Number,Block,Task Type,Frame Shape,Number of Circles,Congruent Trial,Correct Key,RT,Correct Response
+#design: block_cnt,block_id,trial_cnt,trial_id
+12801,design,logged,
+12801,Experiment,started
+12818,Stimulus,presented,20
+15406,Keyboard,received, ,wait_char
+15426,Stimulus,presented,17
+16369,Keyboard,received,109,wait
+16385,Stimulus,presented,16
+17197,Picture,loaded,Stimuli/shape_diamond_2_circles.png
+17200,Stimulus,presented,0
+19332,Keyboard,received,108,wait
+19354,Stimulus,presented,19
+24362,Stimulus,presented,16
+24871,Stimulus,presented,16
+25680,Picture,loaded,Stimuli/shape_diamond_3_circles.png
+25682,Stimulus,presented,1
+27726,Keyboard,received,108,wait
+27744,Stimulus,presented,19
+32752,Stimulus,presented,16
+33260,Stimulus,presented,16
+34071,Picture,loaded,Stimuli/shape_square_2_circles.png
+34073,Stimulus,presented,2
+35584,Keyboard,received,108,wait
+35599,Stimulus,presented,16
+36409,Picture,loaded,Stimuli/filling_diamond_2_circles.png
+36411,Stimulus,presented,4
+37823,Keyboard,received,115,wait
+37839,Stimulus,presented,16
+38647,Picture,loaded,Stimuli/filling_square_2_circles.png
+38649,Stimulus,presented,6
+40177,Keyboard,received,108,wait
+40195,Stimulus,presented,19
+45203,Stimulus,presented,16
+45712,Stimulus,presented,16
+46520,Picture,loaded,Stimuli/filling_diamond_2_circles.png
+46522,Stimulus,presented,4
+47479,Keyboard,received,115,wait
+47492,Stimulus,presented,16
+48300,Picture,loaded,Stimuli/filling_diamond_2_circles.png
+48302,Stimulus,presented,8
+49188,Keyboard,received,115,wait
+49202,Stimulus,presented,16
+50010,Picture,loaded,Stimuli/shape_square_2_circles.png
+50012,Stimulus,presented,14
+51463,Keyboard,received,108,wait
+51477,Stimulus,presented,16
+52287,Picture,loaded,Stimuli/filling_diamond_3_circles.png
+52289,Stimulus,presented,9
+53726,Keyboard,received,115,wait
+53746,Stimulus,presented,19
+58753,Stimulus,presented,16
+59254,Experiment,ended
+59254,Data,saved
+59256,Stimulus,presented,23
+62283,stdout,received,'** Expyriment Data Preprocessor **'
+62289,stdout,received,'found 5 subject_data sets'
+62289,stdout,received,"found 11 variables: ['subject_id', 'Sex', 'Trial Number', 'Block', 'Task Type', 'Frame Shape', 'Number of Circles', 'Congruent Trial', 'Correct Key', 'RT', 'Correct Response']"
+62290,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_04_202105111125.xpd'
+62291,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_01_202105091814.xpd'
+62293,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_03_202105091823.xpd'
+62295,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_05_202105121007.xpd'
+62297,stdout,received,'   reading /Users/VictoriaShevchenko/Documents/PCBS/PCBS_Project/PCBS_Women_vs_Men_Multitasking/data/experiment_1_02_202105091815.xpd'
+62311,stdout,received,'write file: experiment_1_data.csv (6501 cells in 591 rows)'
