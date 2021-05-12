@@ -181,12 +181,10 @@ exp_1.data_variable_names = ["Sex", "Trial Number", "Block", "Task Type", "Frame
 
 kb = io.Keyboard()
 
-control.start()
+control.start(skip_ready_screen=True)
 
 training(TRAINING_TRIALS)
 experiment(BLOCKS, EXPERIMENT_TRIALS_PER_BLOCK)
-
-control.end()
 
 current_dir = os.getcwd() + '/'
 data_dir = "data"
