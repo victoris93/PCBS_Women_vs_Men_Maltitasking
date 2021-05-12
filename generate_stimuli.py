@@ -1,5 +1,8 @@
 # Author: Victoria Shevchenko
 
+"""The present script generates png images and names them based on the task they correspond to. Thus, an image that contains a stimulus with a square frame with two circles inside and which requires you to determine the shape of the frame is named shape_square_2_circles.png. Tasks and responses combined together yield 8 stimuli. Separate function are defined to generate needed shapes given the task and the number of circles within the shape. These functions are further used by other functions which generate and save the imagesin the "Stimuli" folder."""
+
+import os
 import pygame 
 import math
 
@@ -13,6 +16,8 @@ pygame.init()
 pygame.font.init()
 screen = pygame.display.set_mode((W, H), pygame.DOUBLEBUF)
 screen.fill(BLACK)
+
+STIM_DIR = 'Stimuli/'
 
 def draw_stimulus_field(offset_1, offset_2):
 	field_x_corner, field_y_corner = offset_1, offset_2
@@ -84,7 +89,7 @@ def draw_2_circles(task_type):
 			pygame.draw.circle(screen, YELLOW, (center_x, center_y), 20)
 	
 def shape_task(frame, circle_number):
-	filename = "shape_{}_{}_circles.png".format(frame, circle_number)
+	filename = os.path.join(STIM_DIR,"shape_{}_{}_circles.png".format(frame, circle_number))
 	if frame == "square": 
 		draw_square("shape")
 	elif frame == "diamond": 
@@ -97,7 +102,7 @@ def shape_task(frame, circle_number):
 	pygame.image.save(screen, filename)
 	
 def filling_task(frame, circle_number):
-	filename = "filling_{}_{}_circles.png".format(frame, circle_number)
+	filename = os.path.join(STIM_DIR, "filling_{}_{}_circles.png".format(frame, circle_number))
 	if frame == "square": 
 		draw_square("filling")
 	elif frame == "diamond": 
