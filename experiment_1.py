@@ -1,3 +1,6 @@
+# Author: Victoria Shevchenko
+""" Here, distinct functions are defined for the training and experimental trials. The training function does not collect data and takes the number of trials as imput. The experiment function attributes additional factors to trials (correct_key, is_congruent, is_correct) and collects data. It takes as input a list of stimulus blocks and the number of trials for each block. Subject's sex is retrieved with a separate function and is recorded for every trial. The factors related to stimuli (task, shape of the frame, number of circles) are attributed at the stage of trial block creation. Three blocks are created: pure shape, pure filling and mixed. At the end of the experiment, the script concatenates the generated data in a csv file and saves it to the current directory."""
+
 import os
 from expyriment import design, control, stimuli, misc, io
 
